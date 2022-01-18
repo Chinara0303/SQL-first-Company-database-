@@ -1,0 +1,23 @@
+CREATE database Company
+USE Company
+CREATE TABLE Employees
+(
+   NAME NVARCHAR(50),
+   SURNAME NVARCHAR(100),
+   POSITION NVARCHAR(100),
+   SALARY INT
+)
+
+SELECT * FROM Employees
+INSERT INTO Employees (NAME,SURNAME,POSITION, SALARY)
+VALUES('Chinara','Ibadova','Frontend developer',5000)
+INSERT INTO Employees VALUES('Nicat','Agayev','Backend developer',10000)
+INSERT INTO Employees (SALARY,NAME,POSITION,SURNAME)
+VALUES(4000,'Gunel','Backend developer','Novruzova')
+INSERT INTO Employees (POSITION,SALARY,NAME,SURNAME)
+VALUES('Backend developer',6600,'Farah','Ibrahimli')
+
+SELECT AVG(SALARY) [AVGSALARY] FROM Employees
+SELECT (NAME+' '+SURNAME),SALARY FROM Employees WHERE SALARY> (SELECT AVG(SALARY) FROM Employees)
+SELECT MIN(SALARY) [MINSALARY] FROM Employees
+SELECT MAX(SALARY) [MINSALARY] FROM Employees
